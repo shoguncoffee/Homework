@@ -4,6 +4,7 @@ int main() {
     int n, start, i=0;
     scanf("%d", &n);
     int sq = n*n, l[sq];
+    for (int q=0; q<sq; q++) l[q] = 0;
     int sign=1, digit=0, num[5] = {0};
     for (int line=0; line <= n;) {
         char c = getchar();
