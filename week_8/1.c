@@ -2,9 +2,11 @@
 #include <math.h>
 
 int main() {
-    int value;
+    int value, est;
     scanf("%d", &value);
-    int p[2000] = {0}, now = 0;
+    est = (int)pow(value, (float)4/5) + 5;
+    int p[est], now = 0;
+    for (int i = 0; i<est; i++) p[i] = 0;
     for (int n = 2; n <= value; n++) {
         for (int x = 0; x <= now; x++) {
             if (p[x] == 0) {
