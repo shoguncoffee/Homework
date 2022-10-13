@@ -14,10 +14,10 @@ void map(int l[n][n]) {
         for (int i=0; i<n; i++) 
             for (int k=0; k<8; k++)
                 c[i][k] = '\0';
-
-        scanf("%s %s %s %s %s", c[0], c[1], c[2], c[3], c[4]);
+        
         for (int point=0; point<n; point++) {
             l[line][point] = 0;
+            scanf("%s", c[point]);
             if (strcmp("S", c[point]) == 0)
                 start = (coor){.line = line, .point = point};
             else
