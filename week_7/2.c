@@ -9,19 +9,15 @@ int n, nowmin = 100000;
 coor start;
 
 void map(int l[n][n]) {
-    char c[n][8];
     for (int line=0; line<n; line++) {
-        for (int i=0; i<n; i++) 
-            for (int k=0; k<8; k++)
-                c[i][k] = '\0';
-        
         for (int point=0; point<n; point++) {
+            char c[8] = {};
+            scanf("%s", c);
             l[line][point] = 0;
-            scanf("%s", c[point]);
-            if (strcmp("S", c[point]) == 0)
+            if (strcmp("S", c) == 0)
                 start = (coor){.line = line, .point = point};
             else
-                l[line][point] = atoi(c[point]);
+                l[line][point] = atoi(c);
         }
     }
 }
@@ -66,7 +62,7 @@ int is_overlap(coor *footprint, int index, coor now) {
     return 0;
 }
 int work(int l[n][n], coor *footprint, int index) {
-    int f[9] = {0}, e = 1;
+    int f[9] = {}, e = 1;
     forklist(l, f, footprint[index]);
     
     for (int i=0; i<9; i++) {
