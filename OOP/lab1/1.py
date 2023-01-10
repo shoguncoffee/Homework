@@ -1,2 +1,4 @@
-r = range(2000//7 + 1, 3200, 7)
-print(*[n for n in r if n%5], sep=',')
+start = (2000//7 + 1)*7
+iters = range(start, 3200, 7)
+generator = (n for n in iters if n%5)
+print(*generator, sep=',', end=',')

@@ -1,2 +1,2 @@
-s = '#'*10
-print(*[s[:-n] for n in range(10)], sep='\n')
+l = (f" {'#'*n :>10}" for n in range(1, 11))
+print(*l, sep='\n')

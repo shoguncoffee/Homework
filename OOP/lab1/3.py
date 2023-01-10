@@ -1,12 +1,13 @@
-t = [int(q) for q in input().split(' ')]
-h, m = [(e - q) for q, e in zip(t, t[2:])]
+time = [int(q) for q in input().split(' ')]
+hour, minute = [(e - q) for q, e in zip(time, time[2:])]
 
-if m > 15 or h:
-    if h > 6: 
+if minute > 15 or hour:
+    remain = bool(minute)
+    if hour + remain > 6: 
         print(200)
     else: 
-        if h > 3:
-            h = 3*(h-2) + bool(m)
-        print((h + bool(m)) * 10)
+        if hour + remain > 3:
+            hour = 3*(hour-2) + remain
+        print((hour + remain) * 10)
 else:
     print(0)

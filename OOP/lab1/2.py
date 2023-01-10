@@ -1,3 +1,4 @@
-s = input().replace(' ', '')
-print(up := sum(q.isupper() for q in s))
-print(len(s) - up)
+strs = ''.join(q for q in input() if q.isalpha())
+upper = sum(q.islower() for q in strs)
+print(upper)
+print(len(strs) - upper)
