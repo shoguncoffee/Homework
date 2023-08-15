@@ -15,7 +15,7 @@ def pantip(index=-1, *product):
             
         elif s < money and index < m:
             return pantip(index, *product, price[index]) + pantip(index, *product)
-        
+    
     return 0
 
 print(f'Krisada can purchase Product: {price} with: {money} Baht | {pantip()} Pattern')
