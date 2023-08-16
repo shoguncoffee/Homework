@@ -36,15 +36,17 @@ branchs = {*branch_in, *branch_out}
 
 pairs = dict(
     sorted(
-        pair for branch in branchs 
-        for pair in zip(branch[::2], branch[1::2])
+        pair for b in branchs for pair in zip(b[::2], b[1::2])
     )
 )
 single = [
-    branch[-1] for branch in branchs 
-    if len(branch) % 2
+    b[-1] for b in branchs if len(b) % 2
 ]
-print(
-    *sorted([*single, *pairs.keys()]), 
-    *pairs.values(), sep=' -> '
-)
+if intersection:
+    print('Delete intersection then swap merge:')
+    print(
+        *sorted([*single, *pairs.keys()]), 
+        *pairs.values(), sep=' -> '
+    )
+else:
+    print('No intersection')
